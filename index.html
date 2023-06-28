@@ -1,13 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Writing to the page</title>
+
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
+
   <body>
-    <h1>Hai</h1>
-    <p>Para</p>
+    <div id="manual-write"></div>
+    <button py-click="write_to_page()" id="manual">Say Hello</button>
+
     <py-script>
-        print('Hello, World!')
+    def write_to_page():
+      manual_div = Element("manual-write")
+      manual_div.element.innerText = "Hello World"
     </py-script>
   </body>
 </html>
